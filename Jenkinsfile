@@ -4,13 +4,13 @@ pipeline
     agent any
     stages
     {
-        stage("Continuous Download_Master")
+        stage("Continuous Download_Loans")
         {
             steps
             {
                 script
                 {
-                    cicd.newGit('https://github.com/selenium-saikrishna/maven.git' )
+                    cicd.newGit('https://github.com/yallamanda/multibranch.git' )
 
 
                 }
@@ -18,7 +18,7 @@ pipeline
             }
         }
 
-        stage("Continuous Build_Master")
+        stage("Continuous Build_Loans")
         {
             steps
             {
@@ -32,19 +32,7 @@ pipeline
             }
         }
 
-        stage("Continuous Deploy_Master")
-        {
-            steps
-            {
-                script
-                {
-                   cicd.newDeploy("lib-4","172.31.85.85","testapp")
-
-
-                }
-
-            }
-        }
+        
 
 
     }
